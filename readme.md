@@ -351,14 +351,9 @@ As instâncias estão em sub-redes privadas. Para permitir acesso à internet pa
 ## WordPress rodando na EC2 
 
 - Resultado do WordPress rodando na EC2 que foi criada pelo Auto Scaling Group e com o script do user_data totalmente automatizado.
-<br>
-<br>
 
 ![site-wordpress](img/site.png)
 
-<br>
-<br>
-<br>
 
 ## Criação do CloudWatch (Monitoramento)
 
