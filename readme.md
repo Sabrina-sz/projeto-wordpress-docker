@@ -353,7 +353,9 @@ As instâncias estão em sub-redes privadas. Para permitir acesso à internet pa
 - Resultado do WordPress rodando na EC2 que foi criada pelo Auto Scaling Group e com o script do user_data totalmente automatizado.
 <br>
 <br>
+
 ![site-wordpress](img/site.png)
+
 <br>
 <br>
 <br>
@@ -391,9 +393,10 @@ Antes de iniciar, certifique-se de ter os seguintes recursos criados e configura
    - `TargetTracking-AutoScaling-...-AlarmHigh`: escala para cima quando `RequestCountPerTarget > 100`.
    - `TargetTracking-AutoScaling-...-AlarmLow`: escala para baixo quando a métrica cai.
 
-- CloudWatch criado 
+## CloudWatch criado 
 <br>
 <br>
+
 ![cloud-watch](img/monitoriamento.png)
 
 ---
