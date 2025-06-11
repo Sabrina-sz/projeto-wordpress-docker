@@ -394,8 +394,6 @@ Antes de iniciar, certifique-se de ter os seguintes recursos criados e configura
    - `TargetTracking-AutoScaling-...-AlarmLow`: escala para baixo quando a métrica cai.
 
 - CloudWatch criado 
-<br>
-<br>
 
 ![cloud-watch](img/monitoriamento.png)
 
