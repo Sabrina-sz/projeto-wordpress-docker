@@ -1,19 +1,19 @@
 ## 🌐 Implantação do WordPress com AWS + Docker
 
-## Projeto da compass OUL
+# Projeto da compass OUL
 
 Este projeto tem como objetivo implantar uma aplicação WordPress utilizando serviços da AWS como EC2, RDS, EFS, Auto Scaling e Load Balancer. A implantação é automatizada com um único script `user_data.sh`.
 
 ---
 
-## 🛠️ Etapas da Implementação
+# 🛠️ Etapas da Implementação
 
-### 1. Executar o WordPress localmente (opcional)
+# Executar o WordPress localmente (opcional)
 Execute um ambiente WordPress local com Docker para validar o funcionamento da aplicação antes de ir para a nuvem.
 
-### 2. Criar a infraestrutura na AWS
+# Criar a infraestrutura na AWS
 
-## Criação da VPC
+# Criação da VPC
 
 - Pesquise por VPC.
 - Escolha um nome para a VPC.
@@ -24,7 +24,7 @@ Execute um ambiente WordPress local com Docker para validar o funcionamento da a
 
 ---
 
-## Criação das Sub-redes
+# Criação das Sub-redes
 
 - Ainda em VPC, no menu lateral, vá até Sub-redes.
 - Crie sub-redes.
@@ -32,14 +32,16 @@ Execute um ambiente WordPress local com Docker para validar o funcionamento da a
 
 ![Configuração da Sub-rede 1](img/sub-rede-config1.png)
 
-![Configuração da Sub-rede 2](img/sub-rede-config2.png)
-
 - Escolha o nome da sub-rede de acordo com se ela vai ser pública ou privada, especificando a zona de disponibilidade.
 - Escolha a Zona de Disponibilidade. Como serão 4 sub-redes (2 privadas e 2 públicas), utilize duas zonas distintas: a primeira zona `us-east-1a` (pública e privada) e a segunda zona `us-east-1b` (pública e privada).
 - O bloco CIDR IPv4 da VPC é automaticamente preenchido com o IPv4 da VPC assim que a VPC é selecionada no início.
 - O bloco CIDR IPv4 da sub-rede é ideal usar um IP da mesma família de IP da VPC.
 - Visualização geral da configuração de rede completa.
 
+![Configuração da Sub-rede 2](img/sub-rede-config2.png)
+
+
+- Visualização geral da configuração de rede
 ![Configuração Geral da VPC](img/vpc-geral.png)
 
 ---
@@ -60,7 +62,7 @@ Execute um ambiente WordPress local com Docker para validar o funcionamento da a
 
 ---
 
-## Criar o RDS (banco de dados)
+# Criar o RDS (banco de dados)
 
 - Pesquise por RDS.
 - Vá em criar banco de dados.
@@ -109,7 +111,7 @@ FLUSH PRIVILEGES;
 
 ---
 
-## Criação da EC2
+# Criação da EC2
 
 - Pesquise por EC2.
 - Vá em executar instância.
@@ -159,9 +161,9 @@ FLUSH PRIVILEGES;
 
 ---
 
-### Instalar manualmente o WordPress conectado ao banco de dados
+## Instalar manualmente o WordPress conectado ao banco de dados
 
-## 📋 Pré-requisitos
+# 📋 Pré-requisitos
 
 - Instância EC2 (Amazon Linux 2023) criada e em execução.
 - Banco de dados RDS MySQL criado e acessível.
@@ -169,11 +171,11 @@ FLUSH PRIVILEGES;
 - Porta **80** liberada no Security Group da EC2.
 - Porta **3306** liberada no Security Group do RDS para a EC2.
 
-## Acesse a EC2 via SSH no terminal.
+# Acesse a EC2 via SSH no terminal.
 
 - Selecione a EC2 e vá em conectar. Na próxima tela que aparecer, clique em conectar.
 
-## Instalar Docker e Docker Compose:
+# Instalar Docker e Docker Compose:
 
 ```bash
 # Atualizar sistema
