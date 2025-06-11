@@ -393,7 +393,7 @@ Antes de iniciar, certifique-se de ter os seguintes recursos criados e configura
    - `TargetTracking-AutoScaling-...-AlarmHigh`: escala para cima quando `RequestCountPerTarget > 100`.
    - `TargetTracking-AutoScaling-...-AlarmLow`: escala para baixo quando a métrica cai.
 
-## CloudWatch criado 
+- CloudWatch criado 
 <br>
 <br>
 
