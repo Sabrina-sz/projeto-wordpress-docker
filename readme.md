@@ -1,19 +1,14 @@
-## 🌐 Implantação do WordPress com AWS + Docker
 
-# Projeto da compass OUL
+# 🌐 Implantação do WordPress com AWS + Docker
 
 Este projeto tem como objetivo implantar uma aplicação WordPress utilizando serviços da AWS como EC2, RDS, EFS, Auto Scaling e Load Balancer. A implantação é automatizada com um único script `user_data.sh`.
 
 ---
 
-# 🛠️ Etapas da Implementação
-
-# Executar o WordPress localmente (opcional)
+## Executar o WordPress localmente (opcional)
 Execute um ambiente WordPress local com Docker para validar o funcionamento da aplicação antes de ir para a nuvem.
 
-# Criar a infraestrutura na AWS
-
-# Criação da VPC
+## Criação da VPC
 
 - Pesquise por VPC.
 - Escolha um nome para a VPC.
@@ -24,7 +19,7 @@ Execute um ambiente WordPress local com Docker para validar o funcionamento da a
 
 ---
 
-# Criação das Sub-redes
+## Criação das Sub-redes
 
 - Ainda em VPC, no menu lateral, vá até Sub-redes.
 - Crie sub-redes.
@@ -42,11 +37,12 @@ Execute um ambiente WordPress local com Docker para validar o funcionamento da a
 
 
 - Visualização geral da configuração de rede
+  
 ![Configuração Geral da VPC](img/vpc-geral.png)
 
 ---
 
-# Grupos de Segurança
+## Grupos de Segurança
 
 - Grupo de segurança da EC2.
 
@@ -62,7 +58,7 @@ Execute um ambiente WordPress local com Docker para validar o funcionamento da a
 
 ---
 
-# Criar o RDS (banco de dados)
+## Criar o RDS (banco de dados)
 
 - Pesquise por RDS.
 - Vá em criar banco de dados.
@@ -98,9 +94,9 @@ Execute um ambiente WordPress local com Docker para validar o funcionamento da a
 ![Configuração do RDS 6](img/rds-config6.png)
 
 - Criar uma instância **Amazon RDS** (MySQL) configurada com:
-  - Nome do banco: `wordpress_db`
-  - Usuário: `admin`
-  - Senha: `lilian68150693`
+  - Nome do banco: `nome do seu banco`
+  - Usuário: `usuario`
+  - Senha: `senha`
   - Permissão pública ativada (para testes).
   - Executar:
 
@@ -111,7 +107,7 @@ FLUSH PRIVILEGES;
 
 ---
 
-# Criação da EC2
+## Criação da EC2
 
 - Pesquise por EC2.
 - Vá em executar instância.
@@ -129,6 +125,8 @@ FLUSH PRIVILEGES;
   - Selecione uma chave existente ou crie uma chave em RSA e formato `.pem`.
 
 ![Configuração da EC2 3](img/ec2-config3.png)
+
+- Escolha RSA em .pem
 
 ![Configuração da EC2 7](img/ec2-config7.png)
 
@@ -161,9 +159,9 @@ FLUSH PRIVILEGES;
 
 ---
 
-## Instalar manualmente o WordPress conectado ao banco de dados
+# Instalar manualmente o WordPress conectado ao banco de dados
 
-# 📋 Pré-requisitos
+## 📋 Pré-requisitos
 
 - Instância EC2 (Amazon Linux 2023) criada e em execução.
 - Banco de dados RDS MySQL criado e acessível.
@@ -171,11 +169,11 @@ FLUSH PRIVILEGES;
 - Porta **80** liberada no Security Group da EC2.
 - Porta **3306** liberada no Security Group do RDS para a EC2.
 
-# Acesse a EC2 via SSH no terminal.
+## Acesse a EC2 via SSH no terminal.
 
 - Selecione a EC2 e vá em conectar. Na próxima tela que aparecer, clique em conectar.
 
-# Instalar Docker e Docker Compose:
+## Instalar Docker e Docker Compose:
 
 ```bash
 # Atualizar sistema
@@ -269,7 +267,7 @@ docker-compose up -d
 
 ![Configuração da EC2 2](img/ec2-2.png)
 
-# Acessar a aplicação WordPress
+## Acessar a aplicação WordPress
 
 Após inicializar a EC2, acessar via navegador: `http://<IP-PÚBLICO-DA-EC2>`.
 
@@ -362,7 +360,7 @@ As instâncias estão em sub-redes privadas. Para permitir acesso à internet pa
 
 ## Criação do CloudWatch (Monitoramento)
 
-# Pré-requisitos
+## Pré-requisitos
 
 Antes de iniciar, certifique-se de ter os seguintes recursos criados e configurados:
 
@@ -396,7 +394,7 @@ Antes de iniciar, certifique-se de ter os seguintes recursos criados e configura
 - CloudWatch criado 
 <br>
 <br>
-![cloudwatch](img/monitoriamento.png)
+![cloud-watch](img/monitoriamento.png)
 
 ---
 
